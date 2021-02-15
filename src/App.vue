@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h1 class="header">Dashboard</h1>
+    <monitor />
+    <h1 class="header">Controls</h1>
+    <dashboard />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Dashboard from '@/components/Dashboard.vue'
+import Monitor from '@/components/Monitor.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Dashboard,
+    Monitor,
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 </style>
