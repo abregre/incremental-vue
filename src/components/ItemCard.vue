@@ -1,7 +1,8 @@
 <template>
     <div class="card">
-        <div class="card-header">{{ resource }}</div>
+        <div class="card-header">{{ capitalizeResource(resource) }}</div>
         <div class="card-controls">
+            <div class="btn" @click="increaseBy(5, resource)">Add 5</div>
             <div class="btn" @click="increaseBy(10, resource)">Add 10</div>
             <div class="btn" @click="increaseBy(50, resource)">Add 50</div>
         </div>
@@ -19,6 +20,9 @@
         methods: {
             increaseBy(val, type) {
                 this.$store.commit('increment', {resource: type, val})
+            },
+            capitalizeResource(name) {
+                return name.charAt(0).toUpperCase() + name.slice(1)
             }
         }
     }
